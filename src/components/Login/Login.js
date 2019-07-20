@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import AuthService from "./AuthService";
 import { Formik, Form, Field } from "formik";
 import BasicFormSchema from "./BasicFormSchema";
+import "./Login.css";
 
 class Login extends Component {
   constructor() {
@@ -37,7 +38,7 @@ class Login extends Component {
                   type="email"
                 />
                 {errors.email && (
-                  <div className="field-error">{errors.email}</div>
+                  <span className="error-field">{errors.email}</span>
                 )}
               </div>
 
@@ -51,7 +52,7 @@ class Login extends Component {
                   type="password"
                 />
                 {touched.password && (
-                  <div className="field-error">{errors.password}</div>
+                  <span className="error-field">{errors.password}</span>
                 )}
               </div>
               <div className="div">
