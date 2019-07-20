@@ -1,5 +1,5 @@
 import decode from "jwt-decode";
-import { URL } from "../../api.js";
+import { URL } from "../../assets/api.js";
 
 export default class AuthService {
   constructor(domain) {

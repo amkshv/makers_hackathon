@@ -1,0 +1,19 @@
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.search {
+  height: 30px;
+  border: 1px solid blueviolet;
+}
+
+.user {
+  height: 30px;
+  border: 1px solid blueviolet;
+}
+.categories {
+  height: 30px;
+  border: 1px solid blueviolet;
+}
