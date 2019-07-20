@@ -15,7 +15,16 @@ export class Forgot extends React.Component {
           <button className="login-button">
             Send
           </button>
-          <span className="create-account">
+          <span 
+            style={{
+              alignSelf: 'center',
+              fontFamily: 'Montserrat',
+              fontStyle: 'normal',
+              fontWeight: 'normal',
+              fontSize: '13px',
+              lineHeight: '17px',
+              color: '#535151',
+            }}>
             New password will be sent to the email
           </span>
         </div>

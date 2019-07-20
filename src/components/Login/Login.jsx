@@ -75,7 +75,7 @@ class Login extends Component {
               <div>
                 <span
                   onClick={() => {
-                    this.props.history.push({ pathname: "/reg" });
+                    this.props.history.push({ pathname: "/register" });
                   }}
                   className="create-account"
                 >
