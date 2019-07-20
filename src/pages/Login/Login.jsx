@@ -7,13 +7,16 @@ import "./Login.css";
 class Login extends Component {
   constructor() {
     super();
-    this.handleChange = this.handleChange.bind(this);
-    this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.Auth = new AuthService();
   }
+
   componentWillMount() {
     if (this.Auth.loggedIn()) this.props.history.replace("/");
   }
+
+  handleFormSubmit = () => {
+    this.props.history.replace("/main");
+  };
   render() {
     return (
       <Formik
@@ -23,7 +26,7 @@ class Login extends Component {
         }}
         validationSchema={BasicFormSchema}
         onSubmit={values => {
-          this.handleFormSubmit(values);
+          this.handleFormSubmit();
         }}
         render={({ errors, touched }) => (
           <Form className="login">
@@ -87,30 +90,6 @@ class Login extends Component {
         )}
       />
     );
-  }
-
-  handleFormSubmit = values => {
-    const password = values.password;
-    const email = values.email;
-
-    this.Auth.login(email, password)
-      .then(res => {
-        const role = res.userRole[0].name;
-
-        if (role === "ROLE_USER") {
-          this.props.history.replace("/profile");
-        } else {
-          this.props.history.replace("/admin");
-        }
-      })
-      .catch(err => {
-        console.error(err);
-      });
-  };
-  handleChange(values) {
-    this.setState({
-      [values.target.name]: values.target.value
-    });
   }
 }
 
