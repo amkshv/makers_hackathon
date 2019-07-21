@@ -3,7 +3,7 @@ import "../Login/Login.css";
 import { Formik, Form, Field } from "formik";
 import BasicFormSchema from "./BasicFormSchema";
 
-export default class Register extends Component {
+export default class SignIn extends Component {
   state = {
     inputlastName: "",
     inputPassword: "",
